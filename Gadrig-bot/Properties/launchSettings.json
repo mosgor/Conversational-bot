@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Gadrig-bot": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\Projects\\C#\\Gadrig-bot"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}
