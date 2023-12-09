@@ -16,3 +16,4 @@ D:\Projects\C#\Gadrig-bot\Gadrig-bot\obj\Debug\net6.0\refint\Gadrig-bot.dll
 D:\Projects\C#\Gadrig-bot\Gadrig-bot\obj\Debug\net6.0\Gadrig-bot.pdb
 D:\Projects\C#\Gadrig-bot\Gadrig-bot\obj\Debug\net6.0\Gadrig-bot.genruntimeconfig.cache
 D:\Projects\C#\Gadrig-bot\Gadrig-bot\obj\Debug\net6.0\ref\Gadrig-bot.dll
+D:\Projects\C#\Gadrig-bot\Gadrig-bot\obj\Debug\net6.0\Gadrig-bot.sourcelink.json

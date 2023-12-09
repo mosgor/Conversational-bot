@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gadrig-bot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4c31fe62944a683c1277ed7da76f381de7b9b81")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gadrig-bot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gadrig-bot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

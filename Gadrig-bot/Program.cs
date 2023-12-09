@@ -41,26 +41,49 @@ async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, Cancel
 
     int chance = Globals.rnd.Next(1, 100);
 
-    string log = "";
-
-    foreach(string a in Globals.messages){
-        log += a + " ";
-    }
-
     readMessages(message.Chat.Id.ToString());
 
     Globals.messages.Add(messageText);
 
     writeMessage(message.Chat.Id.ToString());
 
-    Console.WriteLine(chance + " " + log);
+    if ((message.ReplyToMessage != null && message.ReplyToMessage.From.IsBot) || messageText.EndsWith('?'))
+    {
+        chance = 100;
+    }
 
-    // Echo received message text
     if (chance > 60)
     {
+        string returnMessage = "";
+        if (Globals.rnd.Next(1, 100) > 20)
+        {
+            returnMessage = Globals.messages[Globals.rnd.Next(0, Globals.messages.Count - 1)];
+        }
+        else
+        {
+            int countOfMessages = Globals.rnd.Next(1, 5);
+            List <string> allWords = new List<string>();
+            for (int i = 0; i < countOfMessages; i++)
+            {
+                string randomMessage = Globals.messages[Globals.rnd.Next(0, Globals.messages.Count - 1)];
+                string[] words = randomMessage.Split(' ');
+                words = words.Where(x => !string.IsNullOrEmpty(x)).ToArray();
+                foreach (string word in words) {
+                    if (Globals.rnd.Next(1, 100) > 50) allWords.Add(word); 
+                }
+            }
+            while (allWords.Count > 0)
+            {
+                string word = allWords[Globals.rnd.Next(0, allWords.Count - 1)];
+                returnMessage += word + " ";
+                allWords.Remove(word);
+            }
+            if (returnMessage == "") returnMessage = Globals.messages[Globals.rnd.Next(0, Globals.messages.Count - 1)];
+        }
+        Console.WriteLine(chance);
         Message sentMessage = await botClient.SendTextMessageAsync(
             chatId: chatId,
-            text: Globals.messages[Globals.rnd.Next(0, Globals.messages.Count - 1)],
+            text: returnMessage,
             cancellationToken: cancellationToken);
     }
     else return;
